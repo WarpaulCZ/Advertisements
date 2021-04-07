@@ -1,11 +1,4 @@
 <!DOCTYPE html>
-<!--
-//////////////////////////////////////////////////////////////
-//
-// Řešení 9. cvičení, task-manager/templates/views/index.hbs
-//
-//////////////////////////////////////////////////////////////
--->
 <html>
 
 <head>
@@ -14,10 +7,7 @@
 </head>
 
 <body>
-    {{>header}}
-
-    <!--  Profile of user -->
-    
+    {{>header}} 
 
      {{#with user}}
         <p>Jméno uživatele: {{name}}</p>
@@ -25,7 +15,7 @@
         <p>Age: {{age}}</p>
     {{/with}}
 
-    <button>Ukaž úlohy</button>
+    <button id="my_ad">Moje Inzeráty</button>
     
     {{>footer}}
     
