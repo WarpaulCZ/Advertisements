@@ -1,3 +1,4 @@
+
 const express = require('express')
 const path = require('path')
 const hbs = require('hbs')
@@ -36,8 +37,5 @@ app.get("", (req, res)=> {
     res.render("index.hbs")
 })
 
-app.get("/users", (req, res)=> {
-    res.render("user.hbs")
-})
 
 //mojeFunkce()
