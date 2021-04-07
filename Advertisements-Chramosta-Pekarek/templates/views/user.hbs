@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<!--
+//////////////////////////////////////////////////////////////
+//
+// Řešení 9. cvičení, task-manager/templates/views/index.hbs
+//
+//////////////////////////////////////////////////////////////
+-->
+<html>
+
+<head>
+    <link rel="stylesheet" href="/css/styles.css">
+    <!-- <script src="/js/script.js" defer></script>  -->
+</head>
+
+<body>
+    {{>header}}
+
+    <!--  Profile of user -->
+    
+
+     {{#with user}}
+        <p>Jméno uživatele: {{name}}</p>
+        <p>Email: {{email}}</p>
+        <p>Age: {{age}}</p>
+    {{/with}}
+
+    <button>Ukaž úlohy</button>
+    
+    {{>footer}}
+    
+</body>
+
+</html>
