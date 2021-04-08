@@ -72,17 +72,11 @@ router.post('/users/logoutAll', auth, async (req, res) => {
 // požadavek GET
 // app.get('/users', async (req, res) => {
 router.get('/users/:id', async (req, res) => {
-        // User.find({})
-    // .then((users) => {
-    //     res.send(users)
-    // }).catch((e) => {
-    //     res.status(500).send()
-    // })
     const _id = req.params.id
     try {
         const user = await User.findOne({ _id})
         res.render('user.hbs', {
-            title: 'Vaše user', //header.hbs
+            title: 'Váš profil', //header.hbs
             user: user      
         })
         

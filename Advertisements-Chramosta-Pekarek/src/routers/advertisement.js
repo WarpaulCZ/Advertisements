@@ -5,7 +5,7 @@ const Advertisement = require('../models/advertisement')
 const router = new express.Router()
 
 // operace Create
-router.post('/advertisement', async (req, res) => {
+router.post('/advertisements', async (req, res) => {
     const advertisement = new Advertisement(req.body)
     try {
        await advertisement.save()
@@ -13,6 +13,15 @@ router.post('/advertisement', async (req, res) => {
     } catch (e) {
        res.status(400).send(e)
     }
+})
+
+router.get('/advertisements', async (req, res) => {
+   try {
+      const tasks = await Advertisement.find({})
+      res.send(tasks)
+  } catch (e) {
+      res.status(500).send()
+  }
 })
 
 module.exports = router
