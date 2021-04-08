@@ -33,7 +33,9 @@ app.get("", async (req, res)=> {
     try {
         const ads = await Advertisement.find({})
 
-        res.render("index.hbs", ads)
+        res.render("index.hbs", {
+            ads:ads
+        })
         
     } catch (e) {
         res.status(500).send()

@@ -1,8 +1,31 @@
+
 function json(response) {
     return response.json()
 }
 
-const fetchAds = () => {
+const login = () => {
+let data = { email: document.querySelector('#email').value, password: document.querySelector('#password').value };
+fetch("/users/login", {
+    method: "POST", 
+    body: JSON.stringify(data),
+    headers: {
+        'Content-Type': 'application/json',
+      }
+  }).then(res => {
+    res.json()
+    .then(body => {
+        //TODO
+        console.log(body.token)
+        localStorage.setItem("token",body.token)
+    });
+
+    
+    console.log("Request complete! response:", res);
+  });
+}
+
+
+/*const fetchAds = () => {
     fetch('/advertisements')
     .then(status)
     .then(json)
@@ -10,24 +33,8 @@ const fetchAds = () => {
         adsRender(data)
     })
     .catch( (error) => { renderErrorMessage(error) })
-}
+}*/
 
-const adsRender = (ads) => {
-    const adsTimeLine = document.getElementById("AdTimeLine")
+//window.onload = fetchAds()
 
-    ads.forEach(function (ad) {
-        const adElement = document.createElement('div')
-        const adTopic = document.createElement('h2')
-        const adDescription = document.createElement('p')
-
-        adTopic.textContent = ad.topic
-        adDescription.textContent = ad.description
-
-        adElement.appendChild(adTopic)
-        adElement.appendChild(adDescription)
-        
-        adsTimeLine.appendChild(adElement)
-    });
-}
-
-window.onload = fetchAds()
+document.querySelector('#login').addEventListener('click', login)
