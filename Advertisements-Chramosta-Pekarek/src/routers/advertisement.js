@@ -6,10 +6,10 @@ const router = new express.Router()
 
 // operace Create
 router.post('/advertisements', async (req, res) => {
-    const advertisement = new Advertisement(req.body)
+    const ad = new Advertisement(req.body)
     try {
-       await advertisement.save()
-       res.status(201).send({ advertisement })
+       await ad.save()
+       res.status(201).send({ add })
     } catch (e) {
        res.status(400).send(e)
     }
@@ -17,8 +17,8 @@ router.post('/advertisements', async (req, res) => {
 
 router.get('/advertisements', async (req, res) => {
    try {
-      const tasks = await Advertisement.find({})
-      res.send(tasks)
+      const ads = await Advertisement.find({})
+      res.send(ads)
   } catch (e) {
       res.status(500).send()
   }

@@ -2,10 +2,12 @@
 <html>
     <head>
         <title>Advertisements</title>
+        <script src="/js/ads.js"></script>
+        <link rel="shortcut icon" href="#">
     </head>
     <body>
         {{>header}}
-
+        
         <form>
             <input id="email" placeholder="email">  
             <input id="password" type="password" placeholder="heslo">
@@ -13,6 +15,8 @@
             <button id="login">Přihlásit se</button>
 
         </form>   
+
+        <div id="AdTimeLine"></div>
         {{>footer}}
         
         
