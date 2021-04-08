@@ -31,12 +31,7 @@ app.use(userRouter)
 
 app.get("", async (req, res)=> {
     try {
-        const ads = await Advertisement.find({})
-
-        res.render("index.hbs", {
-            ads:ads
-        })
-        
+        res.render("index.hbs")
     } catch (e) {
         res.status(500).send()
     }

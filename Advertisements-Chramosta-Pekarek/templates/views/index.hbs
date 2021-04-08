@@ -8,27 +8,12 @@
     <body>
         {{>header}}
         
-       
             <input id="email" placeholder="email">  
             <input id="password" type="password" placeholder="heslo">
 
             <button id="login">Přihlásit se</button>
-
-        
-
-        <div id="AdTimeLine">
-            {{#each ads}}
-                <div>
-                    <h2>{{topic}}</h2>
-                    <p>{{description}}</p>
-                </div>
-            {{/each}}
-        </div>
         {{>footer}}
-        
-        <script src="/js/ads.js"></script>
-        
-    </body>
 
-    
+        <script src="/js/ads.js"></script>
+    </body>
 </html>

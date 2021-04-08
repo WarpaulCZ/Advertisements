@@ -1,24 +1,20 @@
 <!DOCTYPE html>
 <html>
+    <head>
+        <link rel="stylesheet" href="/css/styles.css">
+        <!-- <script src="/js/script.js" defer></script>  -->
+    </head>
+    <body>
+        {{>header}} 
 
-<head>
-    <link rel="stylesheet" href="/css/styles.css">
-    <!-- <script src="/js/script.js" defer></script>  -->
-</head>
+        {{#with user}}
+            <p>Jméno uživatele: {{name}}</p>
+            <p>Email: {{email}}</p>
+            <p>Age: {{age}}</p>
+        {{/with}}
 
-<body>
-    {{>header}} 
-
-     {{#with user}}
-        <p>Jméno uživatele: {{name}}</p>
-        <p>Email: {{email}}</p>
-        <p>Age: {{age}}</p>
-    {{/with}}
-
-    <button id="my_ad">Moje Inzeráty</button>
-    
-    {{>footer}}
-    
+        <button id="my_ad">Moje Inzeráty</button>
+        
+        {{>footer}}
 </body>
-
 </html>

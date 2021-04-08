@@ -18,10 +18,16 @@ router.post('/advertisements', async (req, res) => {
 router.get('/advertisements', async (req, res) => {
    try {
       const ads = await Advertisement.find({})
-      res.send(ads)
+
+      res.render("index.hbs", {
+          ads:ads
+      })
+      
   } catch (e) {
       res.status(500).send()
   }
 })
+
+
 
 module.exports = router
