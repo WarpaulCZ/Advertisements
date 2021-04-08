@@ -16,9 +16,15 @@
 
         </form>   
 
-        <div id="AdTimeLine"></div>
+        <div id="AdTimeLine">
+            {{#each ads}}
+                <div>
+                    <h2>{{topic}}</h2>
+                    <p>{{description}}</p>
+                </div>
+            {{/each}}
+        </div>
         {{>footer}}
-        
         
     </body>
 </html>
