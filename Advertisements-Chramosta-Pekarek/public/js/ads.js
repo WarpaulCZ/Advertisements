@@ -2,12 +2,16 @@ const adsRender = (ads) => {
     const adsTimeLine = document.getElementById("AdTimeLine")
 
     ads.forEach((ad) => {
-        const dadElement = document.createElement('div')
+        const adElement = document.createElement('div')
         const adTopic = document.createElement('h2')
         const adDescription = document.createElement('p')
 
-        adTopic.setText
+        adTopic.textContent = ad.topic
+        adDescription.textContent = ad.description
 
-        filmElement.appendChild(filmEl)
+        adElement.appendChild(adTopic)
+        adElement.appendChild(adDescription)
+        
+        adsTimeLine.appendChild(adElement)
     });
 }
