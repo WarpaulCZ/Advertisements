@@ -19,7 +19,7 @@ router.get('/advertisements', async (req, res) => {
    try {
       const ads = await Advertisement.find({})
 
-      res.render("index.hbs", {
+      res.render("advertisements.hbs", {
           ads:ads
       })
       

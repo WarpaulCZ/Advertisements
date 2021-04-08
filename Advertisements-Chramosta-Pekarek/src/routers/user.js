@@ -76,6 +76,7 @@ router.get('/users/:id', async (req, res) => {
     const _id = req.params.id
     try {
         const user = await User.findOne({ _id})
+        
         res.render('user.hbs', {
             title: 'Váš profil', //header.hbs
             user: user      
