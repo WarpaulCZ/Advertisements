@@ -1,5 +1,4 @@
-window.onload = (ads) => {
-
+const adsRender = (ads) => {
     const adsTimeLine = document.getElementById("AdTimeLine")
 
     ads.forEach((ad) => {
