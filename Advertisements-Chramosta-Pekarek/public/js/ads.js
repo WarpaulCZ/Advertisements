@@ -1,7 +1,7 @@
 const adsRender = (ads) => {
     const adsTimeLine = document.getElementById("AdTimeLine")
 
-    ads.forEach((ad) => {
+    ads.forEach(function (ad) {
         const adElement = document.createElement('div')
         const adTopic = document.createElement('h2')
         const adDescription = document.createElement('p')
