@@ -9,7 +9,7 @@ router.post('/advertisements', async (req, res) => {
     const ad = new Advertisement(req.body)
     try {
        await ad.save()
-       res.status(201).send({ add })
+       res.status(201).send({ ad })
     } catch (e) {
        res.status(400).send(e)
     }

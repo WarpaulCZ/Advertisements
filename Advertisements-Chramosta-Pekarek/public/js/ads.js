@@ -23,6 +23,23 @@ fetch("/users/login", {
   });
 }
 
+const logout = () => {
+    fetch("/users/logout", {
+        method: "POST",
+        headers: {
+            'Content-Type': 'application/json',
+            'Authorization': 'Bearer ' + localStorage.getItem("token"),
+          }
+      }).then(res => {
+        console.log("Logout")
+        localStorage.removeItem("token")
+
+        console.log("Request complete! response:", res);
+        
+      });
+    }
+
 
 document.querySelector('#login').addEventListener('click', login)
+document.querySelector('#logout').addEventListener('click', logout)
 
