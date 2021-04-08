@@ -9,6 +9,7 @@ require('./db/mongoose')
 
 const userRouter = require('./routers/user')
 const advertismentRouter = require('./routers/advertisement')
+const Advertisement = require('./models/advertisement')
 
 const app = express()
 const port = process.env.PORT || 3000
@@ -28,8 +29,15 @@ app.use(express.json())
 app.use(advertismentRouter)
 app.use(userRouter)
 
-app.get("", (req, res)=> {
-    res.render("index.hbs")
+app.get("", async (req, res)=> {
+    try {
+        const ads = await Advertisement.find({})
+
+        res.render("index.hbs", ads)
+        
+    } catch (e) {
+        res.status(500).send()
+    }
 })
 
 app.listen(port, () => {
