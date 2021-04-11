@@ -6,6 +6,21 @@
         <a href="/">Domů</a>
         <a href="/users">Uživatel</a>
         <a href="/advertisements">Inzeráty</a>
+        {{#if user}}
+        <a href="/logOut">Odhlásit se</a>
+    {{else}}
+    <a href="/logIn">Přihlásit se</a>
+    <!--  Přihlášení uživatele 
+    <form>
+        <input placeholder="email">  
+        <input type="password" placeholder="heslo">
+        <button>Přihlásit se</button>
+    </form>
+
+    bude řešeno přes samostatnou stránku
+
+    -->
+    {{/if}}
     </nav>
 
 </header>
